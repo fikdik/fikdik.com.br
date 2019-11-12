@@ -1,7 +1,7 @@
 backend:
-  name: github
-  repo: fikdik/fikdik.com.br
-  branch: master
+  name: "github",
+  repo: "fikdik/fikdik.com.br",
+  branch: "master"
   commit_messages:
     create: "Create {{collection}} “{{slug}}”"
     update: "Update {{collection}} “{{slug}}”"
@@ -9,6 +9,7 @@ backend:
     uploadMedia: "[skip ci] Upload “{{path}}”"
     deleteMedia: "[skip ci] Delete “{{path}}”"
 
+logo_url: /img/coffee.png
 media_folder: static/img
 public_folder: /img
 
