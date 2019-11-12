@@ -1,9 +1,13 @@
-display_url: 'http://fikdik.com.br'
+# display_url: 'http://fikdik.com.br'
 # logo_url: /_img/coffee.png
 media_folder: static/_img
 public_folder: /_img
 
 backend:
+  # name: 'gihub',
+  # repo: 'fikdik/fikdik.com.br',
+  # branch: 'master'
+  # api_root: '/api'
   publish_mode: editorial_workflow
   commit_messages:
     create: 'Create {{collection}} "{{slug}}"'
