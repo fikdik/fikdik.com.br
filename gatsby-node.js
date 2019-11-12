@@ -86,9 +86,9 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 };
 
-// if (process.env.NODE_ENV === "development") {
-//   exports.onCreateDevServer = ({ app }) => {
-//     const fsMiddlewareAPI = require("netlify-cms-backend-fs/dist/fs");
-//     fsMiddlewareAPI(app);
-//   };
-// }
+if (process.env.NODE_ENV === "development") {
+  exports.onCreateDevServer = ({ app }) => {
+    const fsMiddlewareAPI = require("netlify-cms-backend-fs/dist/fs");
+    fsMiddlewareAPI(app);
+  };
+}
