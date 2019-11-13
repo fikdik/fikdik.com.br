@@ -1,46 +1,46 @@
-import CMS from "netlify-cms-app";
-import uploadcare from "netlify-cms-media-library-uploadcare";
-import cloudinary from "netlify-cms-media-library-cloudinary";
+import CMS from 'netlify-cms-app'
+import uploadcare from 'netlify-cms-media-library-uploadcare'
+import cloudinary from 'netlify-cms-media-library-cloudinary'
 
-import AboutPagePreview from "./preview-templates/AboutPagePreview";
-import BlogPostPreview from "./preview-templates/BlogPostPreview";
-import ProductPagePreview from "./preview-templates/ProductPagePreview";
-import IndexPagePreview from "./preview-templates/IndexPagePreview";
+import AboutPagePreview from './preview-templates/AboutPagePreview'
+import BlogPostPreview from './preview-templates/BlogPostPreview'
+import ProductPagePreview from './preview-templates/ProductPagePreview'
+import IndexPagePreview from './preview-templates/IndexPagePreview'
 
-import FileSystemBackend from "netlify-cms-backend-fs";
-import collections from "./collections";
+import FileSystemBackend from 'netlify-cms-backend-fs'
+import collections from './collections'
 
 const config = {
   display_url: window.location.origin,
-  collections
-};
+  collections,
+}
 
-if (process.env.NODE_ENV === "development") {
+if (process.env.NODE_ENV === 'development') {
   // config.load_config_file = false
   config.backend = {
-    name: "file-system",
-    api_root: "/api"
-  };
-  CMS.registerBackend("file-system", FileSystemBackend);
+    name: 'file-system',
+    api_root: '/api',
+  }
+  CMS.registerBackend('file-system', FileSystemBackend)
 } else {
   config.backend = {
-    name: "github",
-    repo: "fikdik/fikdik.com.br",
-    branch: "master",
+    name: 'github',
+    repo: 'fikdik/fikdik.com.br',
+    branch: 'master',
     commit_messages: {
       create: 'Create {{collection}} "{{slug}}"',
       update: 'Update {{collection}} "{{slug}}"',
       delete: 'Delete {{collection}} "{{slug}}"',
       uploadMedia: '[skip ci] Upload "{{path}}"',
-      deleteMedia: '[skip ci] Delete "{{path}}"'
-    }
-  };
-  CMS.registerMediaLibrary(uploadcare);
-  CMS.registerMediaLibrary(cloudinary);
+      deleteMedia: '[skip ci] Delete "{{path}}"',
+    },
+  }
+  CMS.registerMediaLibrary(uploadcare)
+  CMS.registerMediaLibrary(cloudinary)
 }
-CMS.init({ config });
+CMS.init({ config })
 
-CMS.registerPreviewTemplate("index", IndexPagePreview);
-CMS.registerPreviewTemplate("about", AboutPagePreview);
-CMS.registerPreviewTemplate("products", ProductPagePreview);
-CMS.registerPreviewTemplate("blog", BlogPostPreview);
+CMS.registerPreviewTemplate('index', IndexPagePreview)
+CMS.registerPreviewTemplate('about', AboutPagePreview)
+CMS.registerPreviewTemplate('products', ProductPagePreview)
+CMS.registerPreviewTemplate('blog', BlogPostPreview)
