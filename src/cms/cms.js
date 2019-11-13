@@ -8,9 +8,11 @@ import ProductPagePreview from "./preview-templates/ProductPagePreview";
 import IndexPagePreview from "./preview-templates/IndexPagePreview";
 
 import FileSystemBackend from "netlify-cms-backend-fs";
+import collections from "./collections";
 
 const config = {
-  display_url: window.location.origin
+  display_url: window.location.origin,
+  collections
 };
 
 if (process.env.NODE_ENV === "development") {
