@@ -26,7 +26,14 @@ if (process.env.NODE_ENV === "development") {
   config.backend = {
     name: "github",
     repo: "fikdik/fikdik.com.br",
-    branch: "master"
+    branch: "master",
+    commit_messages: {
+      create: 'Create {{collection}} "{{slug}}"',
+      update: 'Update {{collection}} "{{slug}}"',
+      delete: 'Delete {{collection}} "{{slug}}"',
+      uploadMedia: '[skip ci] Upload "{{path}}"',
+      deleteMedia: '[skip ci] Delete "{{path}}"'
+    }
   };
   CMS.registerMediaLibrary(uploadcare);
   CMS.registerMediaLibrary(cloudinary);

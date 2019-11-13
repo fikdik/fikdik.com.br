@@ -1,11 +1,3 @@
-backend:
-  commit_messages:
-    create: "Create {{collection}} “{{slug}}”"
-    update: "Update {{collection}} “{{slug}}”"
-    delete: "Delete {{collection}} “{{slug}}”"
-    uploadMedia: "[skip ci] Upload “{{path}}”"
-    deleteMedia: "[skip ci] Delete “{{path}}”"
-
 # logo_url: /_img/coffee.png
 media_folder: static/_img
 public_folder: /_img
