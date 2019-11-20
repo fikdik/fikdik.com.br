@@ -1,13 +1,15 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby + Netlify CMS Starter',
-    description:
-      'This repo contains an example business website that is built with Gatsby, and Netlify CMS.It follows the JAMstack architecture by using Git as a single source of truth, and Netlify for continuous deployment, and CDN distribution.',
+    title: '#fikdik',
+    description: 'A internet fácil',
+    author: 'fikdik.com.br',
+    twitterAutor: '@fikdikcombr',
   },
   plugins: [
-    'gatsby-plugin-root-import',
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sass',
+    {
+      resolve: 'gatsby-plugin-root-import',
+      options: { src: `${__dirname}/src` },
+    },
     {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
       resolve: 'gatsby-source-filesystem',
@@ -19,17 +21,41 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/content`,
-        name: 'pages',
+        path: `${__dirname}/static/_seo`,
+        name: 'assets',
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/src/assets`,
-        name: 'images',
+        path: `${__dirname}/src/components/Icon/assets`,
+        name: 'icons',
       },
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/content`,
+        name: 'content',
+      },
+    },
+    'gatsby-plugin-react-helmet',
+    {
+      resolve: 'gatsby-plugin-styled-components',
+      options: {
+        displayName: false,
+        fileName: false,
+      },
+    },
+    // {
+    //   resolve: 'gatsby-plugin-react-svg',
+    //   options: {
+    //     rule: {
+    //       include: `${__dirname}/src/components/icon/assets`,
+    //     },
+    //   },
+    // },
+    'gatsby-plugin-svg-sprite',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {
@@ -38,9 +64,7 @@ module.exports = {
         plugins: [
           {
             resolve: 'gatsby-remark-relative-images',
-            options: {
-              name: 'uploads',
-            },
+            options: { name: 'uploads' },
           },
           {
             resolve: 'gatsby-remark-images',
@@ -48,14 +72,14 @@ module.exports = {
               // It's important to specify the maxWidth (in pixels) of
               // the content container as this plugin uses this as the
               // base for generating different widths of each image.
+              quality: 72,
               maxWidth: 2048,
+              withWebp: { quality: 80 },
             },
           },
           {
             resolve: 'gatsby-remark-copy-linked-files',
-            options: {
-              destinationDir: 'static',
-            },
+            options: { destinationDir: 'static' },
           },
         ],
       },
@@ -69,19 +93,11 @@ module.exports = {
         modulePath: `${__dirname}/src/cms/cms.js`,
         enableIdentityWidget: true, // Netlify hosting
         publicPath: '_admin',
-        // htmlTitle : "Content Manager",
-        // htmlFavicon: "",
-
+        htmlTitle: 'Admin Panel',
+        // htmlFavicon: '/img/favico.ico',
         manualInit: true,
       },
     },
-    {
-      resolve: 'gatsby-plugin-purgecss', // purges all unused/unreferenced css rules
-      options: {
-        develop: true, // Activates purging in npm run develop
-        purgeOnly: ['/all.sass'], // applies purging only on the bulma css file
-      },
-    }, // must be after other CSS plugins
     'gatsby-plugin-netlify', // make sure to keep it last in the array
   ],
 }

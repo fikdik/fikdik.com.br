@@ -28,4 +28,10 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
   },
+  settings: {
+    react: { version: 'detect' },
+    // 'import/resolver': {
+    //   alias: [['src/', './src/']],
+    // },
+  },
 }
