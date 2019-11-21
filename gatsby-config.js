@@ -14,14 +14,14 @@ module.exports = {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/static/_img`,
+        path: `${__dirname}/static/_s/uploads`,
         name: 'uploads',
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/static/_seo`,
+        path: `${__dirname}/static/_s/img`,
         name: 'assets',
       },
     },
@@ -47,14 +47,6 @@ module.exports = {
         fileName: false,
       },
     },
-    // {
-    //   resolve: 'gatsby-plugin-react-svg',
-    //   options: {
-    //     rule: {
-    //       include: `${__dirname}/src/components/icon/assets`,
-    //     },
-    //   },
-    // },
     'gatsby-plugin-svg-sprite',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
