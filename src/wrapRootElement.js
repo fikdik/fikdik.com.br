@@ -4,7 +4,7 @@ import GlobalStyle from './styles/GlobalStyles'
 
 export const wrapRootElement = ({ element }) => (
   <>
-    {element}
     <GlobalStyle />
+    {element}
   </>
 )
