@@ -24,7 +24,7 @@ export default function Block01(props) {
 
 const ContainerWrapper = styled.div`
   flex: 1;
-  background-image: url('/_img/bg-aviao.jpg');
+  background-image: url('/_s/uploads/bg-aviao.jpg');
   background-size: cover;
   min-height: 100vh;
 
@@ -41,18 +41,22 @@ const Card = styled.div`
   border-radius: 5px;
   color: #fff;
   padding: 30px;
+  line-height: 1.618rem;
 
-  width: 50%;
+  /* width: 50%; */
+  @media only screen and (min-width: 600px) {
+    width: 50%;
+  }
   margin: 80px 0;
   a,
   p {
     font-size: 1.23rem;
-    margin-bottom: 1rem;
   }
   h1 {
     font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 1.618rem;
+    line-height: 3rem;
   }
 `
 

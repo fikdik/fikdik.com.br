@@ -70,7 +70,7 @@ export default function Block01(props) {
 
 const ContainerWrapper = styled.div`
   flex: 1;
-  background-image: url('/_img/bg-nuvens.jpg');
+  background-image: url('/_s/uploads/bg-nuvens.jpg');
   background-size: cover;
   background-attachment: fixed;
   min-height: 100vh;
@@ -125,6 +125,8 @@ const Card = styled.li`
   max-width: 50%;
   display: flex;
   color: #fff;
+  padding: 2rem;
+  /* background: grey; */
 `
 
 const CardIcon = styled.div`
@@ -149,5 +151,8 @@ const CardText = styled.div`
   h3 {
     font-weight: bold;
     margin-bottom: 1rem;
+  }
+  p {
+    line-height: 1.618rem;
   }
 `

@@ -19,7 +19,7 @@ export default function Navbar() {
     <NavbarRoot onTop={scrollPosition > -48}>
       <NavbarContainer>
         <NavbarBrand>
-          <img src="/_img/logo.svg" alt="Logo FIKDIK" />
+          <img src="/_s/uploads/logo.svg" alt="Logo FIKDIK" />
         </NavbarBrand>
         <ul>
           <li>

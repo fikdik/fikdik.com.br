@@ -24,7 +24,7 @@ export default function ContatoThanks() {
 
 const ContainerWrapper = styled.div`
   flex: 1;
-  background-image: url('/_img/bg-montanhas.jpg');
+  background-image: url('/_s/uploads/bg-montanhas.jpg');
   background-size: cover;
   min-height: fit-content;
 

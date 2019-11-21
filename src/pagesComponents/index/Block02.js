@@ -6,25 +6,25 @@ import { LayoutContainer } from 'src/layouts/LayoutDefault/styles'
 const data = [
   {
     title: 'Suporte',
-    imagem: '/_img/icon-help.png',
+    imagem: '/_s/uploads/icon-help.png',
     description:
       'Nossa equipe está pronta para te atender, basta entrar em contato que atenderemos com agilidade.',
   },
   {
     title: 'SEO',
-    imagem: '/_img/icon-rocket.png',
+    imagem: '/_s/uploads/icon-rocket.png',
     description:
       'Todos os sites #fikdik são preparados e otimizados para melhor indexar seu conteúdo nos buscadores.',
   },
   {
     title: 'Segurança',
-    imagem: '/_img/icon-safe.png',
+    imagem: '/_s/uploads/icon-safe.png',
     description:
       'Todos os sites possuem criptografia por padrão e nossos servidores são seguros e confiáveis.',
   },
   {
     title: 'Sob Medida',
-    imagem: '/_img/icon-ruler.png',
+    imagem: '/_s/uploads/icon-ruler.png',
     description:
       'Os serviços #fikdik podem ser construídos especificamente para seu negócio, peça um orçamento.',
   },
@@ -84,9 +84,13 @@ const Container = styled(LayoutContainer)`
     flex: 1;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+
     margin: 4rem 0;
-    li + li {
-      margin-left: 1.618rem;
+    li {
+      flex: 1;
+      margin: 1.618rem;
+      max-width: 20rem;
     }
   }
 `
@@ -111,5 +115,6 @@ const Card = styled.li`
     font-size: 1.23rem;
     margin-bottom: 1rem;
     text-align: left;
+    line-height: 1.618rem;
   }
 `

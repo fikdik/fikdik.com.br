@@ -55,6 +55,7 @@ export default function Contato(props) {
                 data-netlify="true"
                 data-netlify-honeypot="bot-field"
                 onSubmit={handleSubmit}
+                netlify
               >
                 {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
                 <input type="hidden" name="form-name" value="contact" />
@@ -102,7 +103,7 @@ export default function Contato(props) {
 
 const ContainerWrapper = styled.div`
   flex: 1;
-  background-image: url('/_img/bg-montanhas.jpg');
+  background-image: url('/_s/uploads/bg-montanhas.jpg');
   background-size: cover;
   min-height: fit-content;
 

@@ -27,6 +27,18 @@ const GlobalStyle = createGlobalStyle`
     opacity: 0.5;
     cursor: inherit;
   }
+
+  @media only screen and (max-width: 768px) {
+    html {
+      font-size: 85%;
+    }
+  }
+
+  @media only screen and (max-width: 426px) {
+    html {
+      font-size: 50%;
+    }
+  }
 `
 
 export default GlobalStyle

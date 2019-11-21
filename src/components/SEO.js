@@ -40,31 +40,31 @@ function SEO({ description, lang, title, titleOnly }) {
         { property: `og:url`, content: `/` },
         {
           property: `og:image`,
-          content: `${withPrefix('/')}_img/og-image.jpg`,
+          content: `${withPrefix('/')}_s/uploads/og-image.jpg`,
         },
       ]}
     >
       <link
         rel="apple-touch-icon"
         sizes="180x180"
-        href={`${withPrefix('/')}_seo/apple-touch-icon.png`}
+        href={`${withPrefix('/')}_s/seo/apple-touch-icon.png`}
       />
       <link
         rel="icon"
         type="image/png"
-        href={`${withPrefix('/')}_seo/favicon-32x32.png`}
+        href={`${withPrefix('/')}_s/seo/favicon-32x32.png`}
         sizes="32x32"
       />
       <link
         rel="icon"
         type="image/png"
-        href={`${withPrefix('/')}_seo/favicon-16x16.png`}
+        href={`${withPrefix('/')}_s/seo/favicon-16x16.png`}
         sizes="16x16"
       />
 
       <link
         rel="mask-icon"
-        href={`${withPrefix('/')}_seo/safari-pinned-tab.svg`}
+        href={`${withPrefix('/')}_s/seo/safari-pinned-tab.svg`}
         color="#D37F23"
       />
     </Helmet>

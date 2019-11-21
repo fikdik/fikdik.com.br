@@ -93,7 +93,7 @@ export default function Block01(props) {
 
 const ContainerWrapper = styled.div`
   flex: 1;
-  background-image: url('/_img/bg-montanhas.jpg');
+  background-image: url('/_s/uploads/bg-montanhas.jpg');
   background-size: cover;
   min-height: 100vh;
 
@@ -210,7 +210,7 @@ const Card = styled.div`
       width: 1.3rem;
       height: 1.3rem;
       background-color: #444;
-      mask-image: url('/_assets/check.svg');
+      mask-image: url('/_s/img/check.svg');
     }
     li + li {
       border-top: 1px dotted #666;

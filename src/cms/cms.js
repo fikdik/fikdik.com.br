@@ -2,6 +2,8 @@ import CMS from 'netlify-cms-app'
 import uploadcare from 'netlify-cms-media-library-uploadcare'
 import cloudinary from 'netlify-cms-media-library-cloudinary'
 
+import SEOPagePreview from './modules/seo/preview'
+
 import FileSystemBackend from 'netlify-cms-backend-fs'
 import collections from './collections'
 
@@ -22,6 +24,7 @@ if (process.env.NODE_ENV === 'development') {
     name: 'github',
     repo: 'fikdik/fikdik.com.br',
     branch: 'master',
+    publish_mode: 'editorial_workflow',
     commit_messages: {
       create: 'Create {{collection}} "{{slug}}"',
       update: 'Update {{collection}} "{{slug}}"',
@@ -34,3 +37,5 @@ if (process.env.NODE_ENV === 'development') {
   CMS.registerMediaLibrary(cloudinary)
 }
 CMS.init({ config })
+
+CMS.registerPreviewTemplate('seo', SEOPagePreview)

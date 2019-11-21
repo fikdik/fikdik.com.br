@@ -1,3 +1,3 @@
-# logo_url: /_img/coffee.png
-media_folder: static/_img
-public_folder: /_img
+logo_url: /_s/uploads/logo.svg
+media_folder: static/_s/uploads
+public_folder: /_s/uploads
