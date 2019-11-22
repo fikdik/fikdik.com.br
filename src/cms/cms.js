@@ -2,7 +2,7 @@ import CMS from 'netlify-cms-app'
 import uploadcare from 'netlify-cms-media-library-uploadcare'
 import cloudinary from 'netlify-cms-media-library-cloudinary'
 
-import SEOPagePreview from './modules/seo/preview'
+import brandPagePreview from './modules/brand/preview'
 
 import FileSystemBackend from 'netlify-cms-backend-fs'
 import collections from './collections'
@@ -38,4 +38,4 @@ if (process.env.NODE_ENV === 'development') {
 }
 CMS.init({ config })
 
-CMS.registerPreviewTemplate('seo', SEOPagePreview)
+CMS.registerPreviewTemplate('brand', brandPagePreview)

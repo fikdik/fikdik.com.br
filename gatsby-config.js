@@ -4,6 +4,7 @@ module.exports = {
     description: 'A internet fácil',
     author: 'fikdik.com.br',
     twitterAutor: '@fikdikcombr',
+    siteUrl: 'https://fikdik.com.br',
   },
   plugins: [
     {
@@ -90,6 +91,7 @@ module.exports = {
         manualInit: true,
       },
     },
+    'gatsby-plugin-sitemap',
     'gatsby-plugin-netlify', // make sure to keep it last in the array
   ],
 }

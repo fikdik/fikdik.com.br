@@ -1,5 +1,5 @@
-import seo from './modules/seo/content.js'
+import brand from './modules/brand/content.js'
 // import pages from './configCollections/pages'
 // import info from './configCollections/info'
 
-export default [seo]
+export default [brand]
