@@ -12,7 +12,7 @@ import {
 
 export default function Navbar() {
   const [scrollPosition, setScrollPosition] = useState(true)
-  const [menuOpen, setMenuOpen] = useState(true)
+  const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)
