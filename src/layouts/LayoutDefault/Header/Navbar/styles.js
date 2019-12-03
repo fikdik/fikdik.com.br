@@ -26,7 +26,7 @@ export const NavbarRoot = styled.nav`
     list-style: none;
   }
 
-  a {
+  li a {
     display: block;
     color: inherit;
     &:hover {
