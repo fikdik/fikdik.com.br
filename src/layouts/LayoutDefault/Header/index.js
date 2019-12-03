@@ -7,6 +7,7 @@ import Link from 'src/components/Link'
 import { LayoutContainer } from 'src/layouts/LayoutDefault/styles'
 
 import Navbar from './Navbar'
+import media from 'src/theme/mediaQueries'
 
 const data = [
   {
@@ -58,7 +59,10 @@ export const TopBar = styled.div`
 `
 
 export const TopBarContainer = styled(LayoutContainer)`
-  display: flex;
+  @media screen and (${media.phone}) {
+    display: flex;
+  }
+  display: none;
   justify-content: space-between;
 
   ul {

@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { LayoutContainer } from 'src/layouts/LayoutDefault/styles'
 import Icon from 'src/components/Icon'
+import media from 'src/theme/mediaQueries'
 
 const data = [
   {
@@ -104,6 +105,7 @@ const Cards = styled.ul`
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+
   margin: 4rem 0;
   > li:hover {
     > div:first-child {
@@ -122,10 +124,12 @@ const Cards = styled.ul`
 `
 
 const Card = styled.li`
-  max-width: 50%;
   display: flex;
   color: #fff;
   padding: 2rem;
+  @media screen and (${media.phone}) {
+    max-width: 50%;
+  }
   /* background: grey; */
 `
 

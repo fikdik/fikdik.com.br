@@ -85,12 +85,13 @@ const Container = styled(LayoutContainer)`
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
 
     margin: 4rem 0;
     li {
       flex: 1;
       margin: 1.618rem;
-      max-width: 20rem;
+      /* max-width: 20rem; */
     }
   }
 `

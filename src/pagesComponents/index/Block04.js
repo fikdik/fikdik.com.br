@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 import { LayoutContainer } from 'src/layouts/LayoutDefault/styles'
 import Link from 'src/components/Link'
+import media from 'src/theme/mediaQueries'
 
 const data = [
   {
@@ -121,20 +122,22 @@ const Container = styled(LayoutContainer)`
   }
 `
 const Cards = styled.div`
-  width: 100%;
-
   display: flex;
-  flex-direction: row;
-  margin: 4rem 0;
-
-  div + div {
-    margin-left: 1.618rem;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin: 3rem 0;
+  @media screen and (${media.phone}) {
+    flex-direction: row;
+    div {
+      margin: 0 1rem;
+    }
   }
 `
 
 const Card = styled.div`
   flex: 1;
   background-color: #fff;
+  margin: 1rem 0;
   &:hover {
     background-color: rgba(255, 255, 255, 0.95);
   }
