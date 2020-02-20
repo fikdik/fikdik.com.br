@@ -1,0 +1,9 @@
+/* purgecss start ignore */
+
+.md-template {
+  & h2 {
+    @apply text-xl;
+  }
+}
+
+/* purgecss end ignore */

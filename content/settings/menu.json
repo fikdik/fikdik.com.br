@@ -1,0 +1,24 @@
+{
+  "links": [
+    {
+      "label": "Home",
+      "url": "/"
+    },
+    {
+      "label": "Objetivos",
+      "url": "/#goals"
+    },
+    {
+      "label": "Diferencial",
+      "url": "/#services"
+    },
+    {
+      "label": "Planos",
+      "url": "/#plans"
+    },
+    {
+      "label": "Contato",
+      "url": "/contato"
+    }
+  ]
+}

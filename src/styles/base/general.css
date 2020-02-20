@@ -1,0 +1,17 @@
+/* purgecss start ignore */
+.container {
+  width: 100%;
+  max-width: 1152px;
+  margin: 0 auto;
+  @screen lg {
+    max-width: 80%;
+  }
+}
+
+@screen lg {
+  html {
+    font-size: calc(100vw / 80);
+  }
+}
+
+/* purgecss end ignore */

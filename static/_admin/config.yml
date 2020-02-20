@@ -1,3 +1,2 @@
-logo_url: /_s/uploads/logo.svg
-media_folder: static/_s/uploads
-public_folder: /_s/uploads
+media_folder: static/img
+public_folder: /img

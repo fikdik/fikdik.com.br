@@ -1,0 +1,21 @@
+{
+  "label": "Social Network",
+  "name": "social",
+  "file": "content/general/social.json",
+  "fields": [
+    {
+      "label": "Social Networks",
+      "name": "networks",
+      "widget": "list",
+      "fields": [
+        {
+          "label": "Name",
+          "name": "name",
+          "widget": "select",
+          "options": ["facebook", "instagram", "linkedin", "twitter", "youtube"]
+        },
+        { "label": "Link", "name": "link", "widget": "string" }
+      ]
+    }
+  ]
+}

@@ -1,97 +1,129 @@
+const analytics = require("./content/settings/analytics.json")
+const manifest = require("./content/settings/manifest.json")
+const siteMetadata = require("./content/settings/siteMetadata.json")
+const googleFonts = require("./content/theme/google_fonts.json")
+const colors = require("./content/theme/palette.json")
+
 module.exports = {
-  siteMetadata: {
-    title: '#fikdik',
-    description: 'A internet fácil',
-    author: 'fikdik.com.br',
-    twitterAutor: '@fikdikcombr',
-    siteUrl: 'https://fikdik.com.br',
-  },
+  siteMetadata,
   plugins: [
+    "gatsby-plugin-netlify",
     {
-      resolve: 'gatsby-plugin-root-import',
-      options: { src: `${__dirname}/src` },
-    },
-    {
-      // keep as first gatsby-source-filesystem plugin for gatsby image support
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-plugin-root-import",
       options: {
-        path: `${__dirname}/static/_s/uploads`,
-        name: 'uploads',
+        "~": `${__dirname}/src`,
+        content: `${__dirname}/content`,
+      },
+    },
+
+    // DATA
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/static/img`,
+        name: "images",
       },
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
-        path: `${__dirname}/static/_s/img`,
-        name: 'assets',
+        path: `${__dirname}/src/pages`,
+        name: "pages",
       },
     },
     {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/src/components/Icon/assets`,
-        name: 'icons',
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/content`,
-        name: 'content',
-      },
-    },
-    'gatsby-plugin-react-helmet',
-    {
-      resolve: 'gatsby-plugin-styled-components',
-      options: {
-        displayName: false,
-        fileName: false,
-      },
-    },
-    'gatsby-plugin-svg-sprite',
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
-    {
-      resolve: 'gatsby-transformer-remark',
+      resolve: "gatsby-transformer-remark",
       options: {
         plugins: [
+          "gatsby-remark-copy-linked-files",
+          "gatsby-remark-relative-images",
           {
-            resolve: 'gatsby-remark-relative-images',
-            options: { name: 'uploads' },
-          },
-          {
-            resolve: 'gatsby-remark-images',
+            resolve: "gatsby-remark-images",
             options: {
-              // It's important to specify the maxWidth (in pixels) of
-              // the content container as this plugin uses this as the
-              // base for generating different widths of each image.
-              quality: 72,
-              maxWidth: 2048,
-              withWebp: { quality: 80 },
+              quality: 100,
+              maxWidth: 1200,
             },
-          },
-          {
-            resolve: 'gatsby-remark-copy-linked-files',
-            options: { destinationDir: 'static' },
           },
         ],
       },
     },
+
+    // Styles
     {
-      resolve:
-        process.env.NODE_ENV === 'development'
-          ? '@talves/gatsby-plugin-netlify-cms'
-          : 'gatsby-plugin-netlify-cms',
+      resolve: "gatsby-plugin-nprogress",
+      options: {
+        // Setting a color is optional.
+        color: `${colors["nprogress"][0]}`,
+        // Disable the loading spinner.
+        showSpinner: false,
+      },
+    },
+    "gatsby-plugin-postcss",
+    "gatsby-plugin-svg-sprite",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
+    {
+      resolve: "gatsby-background-image",
+      options: {
+        // add your own characters to escape, replacing the default ':/'
+        specialChars: "/:",
+      },
+    },
+    {
+      resolve: "gatsby-plugin-prefetch-google-fonts",
+      options: {
+        fonts: Object.keys(googleFonts).map(k => googleFonts[k]),
+      },
+    },
+    {
+      resolve: "gatsby-plugin-purgecss",
+      options: {
+        // develop: process.env.NODE_ENV === "development",
+        tailwind: true,
+      },
+    },
+
+    // SEO
+    {
+      resolve: "gatsby-plugin-google-analytics",
+      options: {
+        // The property ID; the tracking code won't be generated without it
+        trackingId: analytics.trackingId,
+        // Setting this parameter is optional
+        anonymize: false,
+        // Delays sending pageview hits on route update (in milliseconds)
+        pageTransitionDelay: 0,
+      },
+    },
+    "gatsby-plugin-react-helmet",
+    {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        ...manifest,
+        display: "standalone",
+        icon: `${__dirname}/static${manifest.icon}`,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-canonical-urls",
+      options: {
+        siteUrl: siteMetadata.siteUrl,
+        stripQueryString: true,
+      },
+    },
+    "gatsby-plugin-sitemap",
+
+    {
+      resolve: "gatsby-plugin-netlify-cms",
       options: {
         modulePath: `${__dirname}/src/cms/cms.js`,
         enableIdentityWidget: true, // Netlify hosting
-        publicPath: '_admin',
-        htmlTitle: 'Admin Panel',
-        // htmlFavicon: '/img/favico.ico',
+        publicPath: `_admin`,
+        htmlTitle: `Netlify CMS Panel`,
+        // htmlFavicon: `/icons/icon-48x48.png`,
         manualInit: true,
       },
     },
-    'gatsby-plugin-sitemap',
-    'gatsby-plugin-netlify', // make sure to keep it last in the array
+    "gatsby-plugin-offline",
   ],
 }

@@ -1,5 +1,8 @@
-import brand from './modules/brand/content.js'
-// import pages from './configCollections/pages'
-// import info from './configCollections/info'
+const reqConfig = require.context("./modules/", true, /config.js$/)
+const reqPreview = require.context("./modules/", true, /preview.js$/)
 
-export default [brand]
+export const collections = reqConfig.keys().map(path => reqConfig(path).default)
+
+export function registerPreviews() {
+  reqPreview.keys().map(path => reqPreview(path).default())
+}

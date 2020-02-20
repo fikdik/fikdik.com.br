@@ -1,37 +1,27 @@
 module.exports = {
-  env: {
-    browser: true,
-    es6: true,
-    jest: true,
-  },
-  extends: [
-    'plugin:react/recommended',
-    'standard',
-    'prettier',
-    'prettier/react',
-  ],
   globals: {
-    Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly',
+    graphql: true,
+    __PATH_PREFIX__: true,
+    __BASE_PATH__: true, // this will rarely, if ever, be used by consumers
   },
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    },
-    ecmaVersion: 2018,
-    sourceType: 'module',
-  },
-  plugins: ['react', 'react-hooks', 'prettier'],
+  extends: ["react-app"],
+  plugins: [
+    "eslint-plugin-import-helpers",
+    "graphql",
+    "react",
+    "react-hooks",
+    "prettier",
+  ],
   rules: {
-    'prettier/prettier': 'error',
-    'react/jsx-filename-extension': ['error', { extensions: ['.js', '.jsx'] }],
-    'import/prefer-default-export': 'off',
-    'no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
-  },
-  settings: {
-    react: { version: 'detect' },
-    // 'import/resolver': {
-    //   alias: [['src/', './src/']],
-    // },
+    "prettier/prettier": "error",
+    "no-unused-vars": ["error", { argsIgnorePattern: "^_" }],
+    "import-helpers/order-imports": [
+      "warn",
+      {
+        newlinesBetween: "always", // new line between groups
+        groups: ["/^react/", "module", "/^~/", ["parent", "sibling", "index"]],
+        alphabetize: { order: "asc", ignoreCase: true },
+      },
+    ],
   },
 }

@@ -1,0 +1,150 @@
+{
+  "file": "src/pages/index.md",
+  "label": "Home",
+  "name": "home",
+  "fields": [
+    {
+      "label": "Template Key",
+      "name": "templateKey",
+      "widget": "hidden",
+      "default": "pages/home"
+    },
+    {
+      "label": "Title",
+      "name": "title",
+      "widget": "hidden",
+      "default": "Home"
+    },
+    {
+      "label": "Hero",
+      "name": "hero",
+      "widget": "object",
+      "fields": [
+        { "label": "Title", "name": "title", "widget": "string" },
+        { "label": "Text", "name": "text", "widget": "text" },
+        { "label": "Link", "name": "link", "widget": "string" },
+        { "label": "Background Image", "name": "bgImage", "widget": "image" },
+        { "label": "Background Color", "name": "bgColor", "widget": "string" }
+      ]
+    },
+    {
+      "label": "Goals",
+      "name": "goals",
+      "widget": "object",
+      "fields": [
+        { "label": "Background Color", "name": "bgColor", "widget": "string" },
+        { "label": "Title", "name": "title", "widget": "string" },
+        { "label": "Text", "name": "text", "widget": "string" },
+        {
+          "label": "Cards",
+          "name": "cards",
+          "widget": "list",
+          "fields": [
+            { "label": "Title", "name": "title", "widget": "string" },
+            { "label": "Text", "name": "text", "widget": "text" },
+            { "label": "Icon", "name": "icon", "widget": "image" }
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Services",
+      "name": "services",
+      "widget": "object",
+      "fields": [
+        { "label": "Title", "name": "title", "widget": "string" },
+        { "label": "Text", "name": "text", "widget": "string" },
+        {
+          "label": "Cards",
+          "name": "cards",
+          "widget": "list",
+          "fields": [
+            { "label": "Title", "name": "title", "widget": "string" },
+            { "label": "Text", "name": "text", "widget": "text" },
+            {
+              "label": "Icon",
+              "name": "icon",
+              "widget": "select",
+              "options": [
+                "hand-spock",
+                "rocket",
+                "users",
+                "life-ring",
+                "cubes",
+                "calculator"
+              ]
+            }
+          ]
+        },
+        { "label": "Background Image", "name": "bgImage", "widget": "image" },
+        { "label": "Background Color", "name": "bgColor", "widget": "string" }
+      ]
+    },
+    {
+      "label": "Plans",
+      "name": "plans",
+      "widget": "object",
+      "fields": [
+        { "label": "Title", "name": "title", "widget": "string" },
+        { "label": "Text", "name": "text", "widget": "string" },
+        {
+          "label": "Cards",
+          "name": "cards",
+          "widget": "list",
+          "fields": [
+            { "label": "Title", "name": "title", "widget": "string" },
+            { "label": "Text", "name": "text", "widget": "string" },
+            { "label": "Color", "name": "color", "widget": "string" },
+            {
+              "label": "Price",
+              "name": "price",
+              "widget": "string",
+              "required": false
+            },
+            {
+              "label": "Period",
+              "name": "period",
+              "widget": "string",
+              "default": "Mensais"
+            },
+            { "label": "Services", "name": "services", "widget": "list" }
+          ]
+        },
+        { "label": "Background Image", "name": "bgImage", "widget": "image" },
+        { "label": "Background Color", "name": "bgColor", "widget": "string" }
+      ]
+    },
+    {
+      "label": "Body",
+      "name": "body",
+      "widget": "markdown"
+    },
+    {
+      "label": "Metadata",
+      "name": "metadata",
+      "widget": "object",
+      "fields": [
+        {
+          "label": "Updated Date",
+          "name": "dateModified",
+          "widget": "datetime"
+        },
+        {
+          "label": "Cover",
+          "name": "cover",
+          "widget": "image",
+          "default": "/img/ogimage.png"
+        },
+        {
+          "label": "Description",
+          "name": "description",
+          "widget": "string",
+          "pattern": [
+            ".{30,155}",
+            "Must have at least 30 characters and not more than 155"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "label": "Palette Color",
+  "name": "palette",
+  "file": "content/theme/palette.json",
+  "fields": [
+    { "label": "Barra de progresso", "name": "nprogress", "widget": "list" },
+    { "label": "Brand", "name": "brand", "widget": "list" },
+    { "label": "Header", "name": "header", "widget": "list" },
+    { "label": "Body", "name": "body", "widget": "list" },
+    { "label": "Footer", "name": "footer", "widget": "list" },
+    { "label": "Extra", "name": "extra", "widget": "list" }
+  ]
+}

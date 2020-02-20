@@ -1,0 +1,24 @@
+.serviceCards > div:hover {
+  & .serviceIcon {
+    @apply bg-white border-brand-0;
+    color: theme("colors.brand.0");
+  }
+
+  &:nth-child(4n - 2) .serviceIcon,
+  &:nth-child(4n - 1) .serviceIcon {
+    @apply bg-white border-brand-1;
+    color: theme("colors.brand.1");
+  }
+}
+
+.plansList {
+  @apply w-full text-left flex-auto flex flex-col pb-4;
+  & li {
+    @apply relative pl-8 flex-auto;
+    &::before {
+      @apply absolute w-6 h-6 bg-black top-0 left-0;
+      content: "";
+      mask-image: url("/assets/check.svg");
+    }
+  }
+}

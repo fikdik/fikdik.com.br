@@ -1,0 +1,15 @@
+{
+  "sans": {
+    "family": "Roboto",
+    "variants": [
+      "400",
+      "700"
+    ]
+  },
+  "serif": {
+    "family": "Roboto Slab",
+    "variants": [
+      "400"
+    ]
+  }
+}

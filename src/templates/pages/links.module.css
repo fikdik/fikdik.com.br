@@ -1,0 +1,7 @@
+.link {
+  @apply px-8 py-4 mb-6 w-full text-center rounded-full;
+  transition: transform ease 200ms;
+  &:hover {
+    transform: scale(1.1);
+  }
+}

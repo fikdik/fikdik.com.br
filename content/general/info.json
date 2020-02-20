@@ -1,0 +1,29 @@
+{
+  "email": {
+    "address": "atendimento@fikdik.com.br",
+    "subject": "contato  fikdik.com.br"
+  },
+  "phone": {
+    "number": " +5527992246970",
+    "display": " +55 27 99224 6970",
+    "message": "Olá #fikdik."
+  },
+  "address": {
+    "display": "Rua Joaquim da Silva Lima",
+    "locality": "Guarapari",
+    "region": "ES",
+    "country": "Brazil",
+    "postalCode": "29200260",
+    "link": "https://wego.here.com/"
+  },
+  "localID": {
+    "type": "CNPJ",
+    "legalName": "Seal Works Agência Digital Eireli",
+    "foundingDate": "2020-02-07T12:18:19.758Z",
+    "display": "000",
+    "number": "000",
+    "founders": [
+      "Pedro Moreno"
+    ]
+  }
+}

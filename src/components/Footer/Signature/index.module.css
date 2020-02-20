@@ -1,0 +1,22 @@
+.signature {
+  @apply text-center text-sm py-8 px-8;
+  background-color: #000;
+  color: #fff;
+  border-top: 1px solid #252525;
+
+  & a {
+    color: #dd922c;
+    display: inline-block;
+    margin-left: 0.5rem;
+    transition: transform ease 150ms;
+    &:hover {
+      transform: scale(1.2);
+    }
+    & small {
+      color: #a31216;
+    }
+  }
+  @screen md {
+    @apply text-right py-2;
+  }
+}

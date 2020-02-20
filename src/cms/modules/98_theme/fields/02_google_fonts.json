@@ -1,0 +1,27 @@
+{
+  "label": "Google Fonts",
+  "name": "google_fonts",
+  "file": "content/theme/google_fonts.json",
+  "fields": [
+    {
+      "label": "Sans Serif",
+      "name": "sans",
+      "widget": "object",
+      "required": false,
+      "fields": [
+        { "label": "Family", "name": "family", "widget": "string" },
+        { "label": "Variants", "name": "variants", "widget": "list" }
+      ]
+    },
+    {
+      "label": "Serif",
+      "name": "serif",
+      "widget": "object",
+      "required": false,
+      "fields": [
+        { "label": "Family", "name": "family", "widget": "string" },
+        { "label": "Variants", "name": "variants", "widget": "list" }
+      ]
+    }
+  ]
+}

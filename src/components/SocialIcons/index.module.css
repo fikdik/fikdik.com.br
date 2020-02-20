@@ -1,0 +1,27 @@
+.social {
+  transition: all ease-out 150ms;
+}
+
+.social:hover {
+  transform: scale(1.1681);
+}
+
+.facebook:hover {
+  @apply bg-blue-800;
+}
+
+.instagram:hover {
+  @apply bg-orange-700;
+}
+
+.twitter:hover {
+  @apply bg-blue-500;
+}
+
+.linkedin:hover {
+  @apply bg-blue-700;
+}
+
+.youtube:hover {
+  @apply bg-red-600;
+}

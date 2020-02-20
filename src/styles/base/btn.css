@@ -1,0 +1,16 @@
+/* purgecss start ignore */
+
+.btn {
+  @apply py-2 px-4 font-bold inline-block rounded;
+  transition: box-shadow ease 100ms;
+  box-shadow: 1px 2px 3px #333;
+  &:hover {
+    box-shadow: 2px 3px 4px #444;
+  }
+  &:active {
+    box-shadow: 0px 0px 1px #222;
+    transform: translateY(1px);
+  }
+}
+
+/* purgecss end ignore */

@@ -1,9 +1,4 @@
 [[headers]]
-for = "/_s/*"
+for = "/static/*"
 [headers.values]
-Cache-Control = "public, max-age=2628000"
-
-[[headers]]
-for = "/_s/uploads/*"
-[headers.values]
-Cache-Control = "public, max-age=2628000"
+Cache-Control = "public, max-age=1440000"

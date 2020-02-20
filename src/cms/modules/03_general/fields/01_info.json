@@ -1,0 +1,67 @@
+{
+  "label": "General Business Info",
+  "name": "info",
+  "file": "content/general/info.json",
+  "fields": [
+    {
+      "label": "Email",
+      "name": "email",
+      "widget": "object",
+      "fields": [
+        { "label": "Address", "name": "address", "widget": "string" },
+        { "label": "Default Subject", "name": "subject", "widget": "string" }
+      ]
+    },
+    {
+      "label": "Phone",
+      "name": "phone",
+      "widget": "object",
+      "fields": [
+        { "label": "Raw Full Number", "name": "number", "widget": "string" },
+        { "label": "Display Number", "name": "display", "widget": "string" },
+        { "label": "Whatsapp Message", "name": "message", "widget": "string" }
+      ]
+    },
+    {
+      "label": "Address",
+      "name": "address",
+      "widget": "object",
+      "fields": [
+        { "label": "Display Address", "name": "display", "widget": "string" },
+        { "label": "Locality (city)", "name": "locality", "widget": "string" },
+        { "label": "Region (estate)", "name": "region", "widget": "string" },
+        { "label": "Country", "name": "country", "widget": "string" },
+        { "label": "Postal Code", "name": "postalCode", "widget": "string" },
+        {
+          "label": "Link",
+          "name": "link",
+          "widget": "string",
+          "default": "#"
+        }
+      ]
+    },
+    {
+      "label": "CPF / CNPJ",
+      "name": "localID",
+      "widget": "object",
+      "required": false,
+      "fields": [
+        {
+          "label": "Type",
+          "name": "type",
+          "widget": "select",
+          "options": ["CPF", "CNPJ"]
+        },
+        { "label": "Legal Name", "name": "legalName", "widget": "string" },
+        {
+          "label": "Founding Date",
+          "name": "foundingDate",
+          "widget": "datetime"
+        },
+        { "label": "Display Number", "name": "display", "widget": "string" },
+        { "label": "Raw Number", "name": "number", "widget": "string" },
+        { "label": "Founders", "name": "founders", "widget": "list" }
+      ]
+    }
+  ]
+}

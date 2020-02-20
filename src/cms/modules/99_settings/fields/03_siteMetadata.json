@@ -1,0 +1,47 @@
+{
+  "file": "content/settings/siteMetadata.json",
+  "label": "Site Metadata",
+  "name": "siteMetadata",
+  "fields": [
+    { "label": "Title", "name": "title", "widget": "string" },
+    { "label": "Site Url", "name": "siteUrl", "widget": "string" },
+    { "label": "Short Slogan", "name": "slogan", "widget": "string" },
+    {
+      "label": "Default Description",
+      "name": "description",
+      "widget": "string",
+      "pattern": [
+        ".{80,155}",
+        "Must have at least 80 characters and not more than 155"
+      ]
+    },
+    { "label": "Main Language", "name": "lang", "widget": "string" },
+    { "label": "Logo", "name": "logo", "widget": "image" },
+    {
+      "label": "Logo Alternative",
+      "name": "logoAlt",
+      "widget": "image"
+    },
+    {
+      "label": "Default Image on Share",
+      "name": "thumbnail",
+      "widget": "image"
+    },
+    {
+      "label": "Default Publisher",
+      "name": "publisher",
+      "widget": "string"
+    },
+    {
+      "label": "Default Author",
+      "name": "author",
+      "widget": "string"
+    },
+    {
+      "label": "Facebook Admins ID",
+      "name": "fbAdmins",
+      "widget": "string",
+      "required": false
+    }
+  ]
+}

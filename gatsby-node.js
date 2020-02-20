@@ -1,12 +1,94 @@
-const { fmImagesToRelative } = require('gatsby-remark-relative-images')
+const fs = require("fs")
+const { fmImagesToRelative } = require("gatsby-remark-relative-images")
+const { createFilePath } = require("gatsby-source-filesystem")
+const _ = require("lodash")
+const path = require("path")
 
-exports.onCreateNode = ({ node }) => {
-  fmImagesToRelative(node) // convert image paths for gatsby images
+exports.createPages = ({ actions, graphql }) => {
+  const { createPage } = actions
+
+  return graphql(`
+    {
+      allMarkdownRemark(limit: 1000) {
+        edges {
+          node {
+            id
+            fields {
+              slug
+            }
+            frontmatter {
+              tags
+              templateKey
+            }
+          }
+        }
+      }
+    }
+  `).then(result => {
+    if (result.errors) {
+      result.errors.forEach(e => console.error(e.toString()))
+      return Promise.reject(result.errors)
+    }
+
+    const posts = result.data.allMarkdownRemark.edges
+
+    posts.forEach(edge => {
+      const id = edge.node.id
+      const templateName = String(edge.node.frontmatter.templateKey)
+      createPage({
+        path: edge.node.fields.slug,
+        tags: edge.node.frontmatter.tags,
+        component: path.resolve(`src/templates/${templateName}.js`),
+        // additional data can be passed via context
+        context: {
+          id,
+        },
+      })
+    })
+
+    // Tag pages:
+    let tags = []
+    // Iterate through each post, putting all found tags into `tags`
+    posts.forEach(edge => {
+      if (_.get(edge, `node.frontmatter.tags`)) {
+        tags = tags.concat(edge.node.frontmatter.tags)
+      }
+    })
+    // Eliminate duplicate tags
+    tags = _.uniq(tags)
+
+    // Make tag pages
+    tags.forEach(tag => {
+      const tagPath = `/tags/${_.kebabCase(tag)}/`
+
+      createPage({
+        path: tagPath,
+        component: path.resolve(`src/templates/blog/tags.js`),
+        context: {
+          tag,
+        },
+      })
+    })
+  })
 }
 
-if (process.env.NODE_ENV === 'development') {
-  exports.onCreateDevServer = ({ app }) => {
-    const fsMiddlewareAPI = require('netlify-cms-backend-fs/dist/fs')
-    fsMiddlewareAPI(app)
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions
+  fmImagesToRelative(node) // convert image paths for gatsby images
+
+  if (node.internal.type === `MarkdownRemark`) {
+    const value = createFilePath({ node, getNode })
+    createNodeField({
+      name: `slug`,
+      node,
+      value,
+    })
   }
 }
+
+// if (process.env.NODE_ENV === "development") {
+//   exports.onCreateDevServer = ({ app }) => {
+//     const fsMiddlewareAPI = require("netlify-cms-backend-fs/dist/fs")
+//     fsMiddlewareAPI(app)
+//   }
+// }
