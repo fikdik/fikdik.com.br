@@ -12,6 +12,9 @@ module.exports = {
       serif: [googleFonts.serif.family, "serif"],
     },
     extend: {
+      screens: {
+        ultra: "1440px",
+      },
       colors: {
         ...palette,
       },

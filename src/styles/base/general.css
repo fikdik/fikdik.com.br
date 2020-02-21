@@ -1,11 +1,11 @@
 /* purgecss start ignore */
 
-@screen xl {
+@screen ultra {
   .container {
-    max-width: 88.8%;
+    max-width: 80%;
   }
   html {
-    font-size: calc(100vw / 88.8);
+    font-size: calc(100vw / 80);
   }
 }
 
