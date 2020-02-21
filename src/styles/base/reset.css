@@ -21,4 +21,9 @@ svg {
   overflow: hidden;
 }
 
+/* Probably an library error */
+.Toastify[data-reactroot] {
+  display: none;
+}
+
 /* purgecss end ignore */

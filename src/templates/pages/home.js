@@ -134,7 +134,7 @@ export const Template = ({ hero, goals, services, plans }) => {
                   <div className="p-4 h-full flex flex-col justify-between text-gray-700">
                     <div className="mb-6">
                       {Number(card.price).toString() === "NaN" ? (
-                        <p className="mb-2 text-4xl">{card.price}</p>
+                        <p className="mb-2 text-4xl leading-8">{card.price}</p>
                       ) : (
                         <p className="mb-2 flex align-top justify-center">
                           <span className="mr-2">R$</span>

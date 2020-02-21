@@ -5,7 +5,7 @@ import "~/styles/index.css"
 
 export const wrapRootElement = ({ element }) => (
   <>
-    <ToastContainer />
+    <ToastContainer autoClose={3000} />
     {element}
   </>
 )

@@ -78,8 +78,9 @@ module.exports = {
     {
       resolve: "gatsby-plugin-purgecss",
       options: {
-        // develop: process.env.NODE_ENV === "development",
+        develop: process.env.NODE_ENV === "development",
         tailwind: true,
+        purgeOnly: ["src/styles/index.css"],
       },
     },
 

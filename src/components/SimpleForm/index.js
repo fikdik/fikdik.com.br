@@ -44,7 +44,7 @@ export default function SimpleForm() {
           category: "whatsapp button",
           action: "Click",
           label: "Contato pelo Whatsapp",
-          value: 10,
+          value: 0,
         })
         toast.success("Campos validos, complete o envio pelo Whatsapp")
         resetForm({ message: "" })
@@ -60,7 +60,7 @@ export default function SimpleForm() {
           category: "email button",
           action: "Click",
           label: "Contato pelo email",
-          value: 1,
+          value: 0,
         })
         toast.success("Campos validos, complete o envio pelo seu app de email")
         resetForm({ message: "" })
