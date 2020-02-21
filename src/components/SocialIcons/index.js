@@ -7,15 +7,19 @@ import SVGIcon from "~/components/SVGIcon"
 
 import styles from "./index.module.css"
 
-import PropTypes from "prop-types"
-
-function SocialIcons({ iconClass }) {
+export default function SocialIcons() {
   return (
     <>
       {networks.map((network, index) => (
-        <SmartLink to={network.link} key={`${network.name} - ${index}`}>
+        <SmartLink
+          to={network.link}
+          eventLabel={network.name}
+          key={`${network.name} - ${index}`}
+        >
           <SVGIcon
-            className={`${styles.social} ${styles[network.name]} ${iconClass}`}
+            className={`${styles.social} ${
+              styles[network.name]
+            } w-10 h-10 p-1 rounded-lg mr-2`}
             name={network.name}
           />
         </SmartLink>
@@ -23,13 +27,3 @@ function SocialIcons({ iconClass }) {
     </>
   )
 }
-
-SocialIcons.propTypes = {
-  iconClass: PropTypes.string,
-}
-
-SocialIcons.defaultProps = {
-  iconClass: "w-10 h-10 p-1 rounded-lg mr-2",
-}
-
-export default SocialIcons
