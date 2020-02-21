@@ -28,7 +28,7 @@ export default function Header() {
         }`}
       >
         <div className="container">
-          <div className="px-4 py-1 flex justify-between items-center">
+          <div className="px-4 py-2 flex justify-between items-center">
             <div>
               <SmartLink
                 to="/contato"
@@ -39,7 +39,7 @@ export default function Header() {
               </SmartLink>
             </div>
             <div>
-              <SocialIcons iconClass="w-8 h-8 p-1 rounded-lg mr-2" />
+              <SocialIcons iconClass="w-6 h-6 p-1 rounded-lg mr-2" />
             </div>
           </div>
         </div>
