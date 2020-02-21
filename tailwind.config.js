@@ -3,10 +3,10 @@ const googleFonts = require("./content/theme/google_fonts.json")
 const palette = require("./content/theme/palette.json")
 
 module.exports = {
-  corePlugins: {
-    container: false,
-  },
   theme: {
+    container: {
+      center: true,
+    },
     fontFamily: {
       sans: [googleFonts.sans.family, "sans-serif"],
       serif: [googleFonts.serif.family, "serif"],

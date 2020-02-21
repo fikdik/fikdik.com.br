@@ -1,16 +1,11 @@
 /* purgecss start ignore */
-.container {
-  width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
-  @screen xl {
-    max-width: 80%;
-  }
-}
 
 @screen xl {
+  .container {
+    max-width: 88.8%;
+  }
   html {
-    font-size: calc(100vw / 89);
+    font-size: calc(100vw / 88.8);
   }
 }
 
