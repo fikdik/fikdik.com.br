@@ -13,7 +13,7 @@ module.exports = {
     },
     extend: {
       screens: {
-        ultra: "1440px",
+        ultra: "1921px",
       },
       colors: {
         ...palette,
