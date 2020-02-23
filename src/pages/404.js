@@ -11,7 +11,7 @@ export default function contato({ data }) {
   const { plans } = data.markdownRemark.frontmatter
   return (
     <PageLayout>
-      <SEO title={"Contato"} />
+      <SEO title={"404 - Não encontrado"} />
       <main className="flex-auto flex flex-col">
         <BackgroundImage
           Tag={`section`}
