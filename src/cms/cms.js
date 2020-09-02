@@ -1,8 +1,8 @@
-import manifest from "content/settings/manifest.json"
+import manifest from "../../content/settings/manifest.json"
 import CMS from "netlify-cms-app"
 // import FileSystemBackend from "netlify-cms-backend-fs"
-import cloudinary from "netlify-cms-media-library-cloudinary"
-import uploadcare from "netlify-cms-media-library-uploadcare"
+// import cloudinary from "netlify-cms-media-library-cloudinary"
+// import uploadcare from "netlify-cms-media-library-uploadcare"
 import { repository } from "../../package.json"
 import { collections, registerPreviews } from "./collections"
 
@@ -30,14 +30,14 @@ if (repository) {
   config.backend.repo = repository.split("github.com/")[1].split(".git")[0]
 }
 
-console.log(repository?.split("github.com/")[1].split(".git")[0])
+// console.log(repository?.split("github.com/")[1].split(".git")[0])
 
 if (process.env.NODE_ENV === "development") {
   config.local_backend = true
 }
 
-CMS.registerMediaLibrary(uploadcare)
-CMS.registerMediaLibrary(cloudinary)
+// CMS.registerMediaLibrary(uploadcare)
+// CMS.registerMediaLibrary(cloudinary)
 // }
 
 CMS.init({ config })

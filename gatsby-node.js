@@ -17,7 +17,6 @@ exports.createPages = ({ actions, graphql }) => {
               slug
             }
             frontmatter {
-              tags
               templateKey
             }
           }
@@ -37,8 +36,8 @@ exports.createPages = ({ actions, graphql }) => {
       const templateName = String(edge.node.frontmatter.templateKey)
       createPage({
         path: edge.node.fields.slug,
-        tags: edge.node.frontmatter.tags,
-        component: path.resolve(`src/templates/${templateName}.js`),
+        // tags: edge.node.frontmatter.tags,
+        component: path.resolve(`src/templates/${templateName}.tsx`),
         // additional data can be passed via context
         context: {
           id,
@@ -47,34 +46,34 @@ exports.createPages = ({ actions, graphql }) => {
     })
 
     // Tag pages:
-    let tags = []
-    // Iterate through each post, putting all found tags into `tags`
-    posts.forEach(edge => {
-      if (_.get(edge, `node.frontmatter.tags`)) {
-        tags = tags.concat(edge.node.frontmatter.tags)
-      }
-    })
-    // Eliminate duplicate tags
-    tags = _.uniq(tags)
+    // let tags = []
+    // // Iterate through each post, putting all found tags into `tags`
+    // posts.forEach(edge => {
+    //   if (_.get(edge, `node.frontmatter.tags`)) {
+    //     tags = tags.concat(edge.node.frontmatter.tags)
+    //   }
+    // })
+    // // Eliminate duplicate tags
+    // tags = _.uniq(tags)
 
-    // Make tag pages
-    tags.forEach(tag => {
-      const tagPath = `/tags/${_.kebabCase(tag)}/`
+    // // Make tag pages
+    // tags.forEach(tag => {
+    //   const tagPath = `/tags/${_.kebabCase(tag)}/`
 
-      createPage({
-        path: tagPath,
-        component: path.resolve(`src/templates/blog/tags.js`),
-        context: {
-          tag,
-        },
-      })
-    })
+    //   createPage({
+    //     path: tagPath,
+    //     component: path.resolve(`src/templates/blog/tags.tsx`),
+    //     context: {
+    //       tag,
+    //     },
+    //   })
+    // })
   })
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
-  fmImagesToRelative(node) // convert image paths for gatsby images
+  // fmImagesToRelative(node) // convert image paths for gatsby images
 
   if (node.internal.type === `MarkdownRemark`) {
     const value = createFilePath({ node, getNode })
@@ -86,9 +85,9 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 }
 
-// if (process.env.NODE_ENV === "development") {
-//   exports.onCreateDevServer = ({ app }) => {
-//     const fsMiddlewareAPI = require("netlify-cms-backend-fs/dist/fs")
-//     fsMiddlewareAPI(app)
-//   }
-// }
+// // if (process.env.NODE_ENV === "development") {
+// //   exports.onCreateDevServer = ({ app }) => {
+// //     const fsMiddlewareAPI = require("netlify-cms-backend-fs/dist/fs")
+// //     fsMiddlewareAPI(app)
+// //   }
+// // }

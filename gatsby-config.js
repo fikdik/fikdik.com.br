@@ -8,14 +8,13 @@ module.exports = {
   siteMetadata,
   plugins: [
     "gatsby-plugin-netlify",
-    {
-      resolve: "gatsby-plugin-root-import",
-      options: {
-        "~": `${__dirname}/src`,
-        content: `${__dirname}/content`,
-      },
-    },
-
+    // {
+    //   resolve: "gatsby-plugin-root-import",
+    //   options: {
+    //     "~": `${__dirname}/src`,
+    //     content: `${__dirname}/content`,
+    //   },
+    // },
     // DATA
     {
       resolve: "gatsby-source-filesystem",
@@ -40,8 +39,9 @@ module.exports = {
           {
             resolve: "gatsby-remark-images",
             options: {
-              quality: 100,
+              quality: 90,
               maxWidth: 1200,
+              linkImagesToOriginal: false,
             },
           },
         ],
@@ -59,7 +59,7 @@ module.exports = {
       },
     },
     "gatsby-plugin-postcss",
-    "gatsby-plugin-svg-sprite",
+    // "gatsby-plugin-svg-sprite",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     {
