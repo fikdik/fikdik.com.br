@@ -91,7 +91,7 @@ plans:
   cards:
     - color: "#dd922c"
       period: Mensais
-      price: "165.00"
+      price: "195.00"
       text: Site Institucional
       title: Web Classic
       services:
@@ -104,7 +104,7 @@ plans:
         - Email Profissional
     - color: "#48bb78"
       period: Mensais
-      price: "350"
+      price: "595"
       text: Ecommerce Integrado
       title: Web Commerce
       services:
